@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E273E1452450E62C0077E51D /* LoadingUIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E273E1432450E62C0077E51D /* LoadingUIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E273E15A2450F7170077E51D /* IndeterminateLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E1592450F7170077E51D /* IndeterminateLoadingView.swift */; };
+		E273E15C2450F8010077E51D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E15B2450F8010077E51D /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E273E1402450E62C0077E51D /* LoadingUIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadingUIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E273E1432450E62C0077E51D /* LoadingUIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingUIFramework.h; sourceTree = "<group>"; };
 		E273E1442450E62C0077E51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E273E1592450F7170077E51D /* IndeterminateLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateLoadingView.swift; sourceTree = "<group>"; };
+		E273E15B2450F8010077E51D /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			children = (
 				E273E1432450E62C0077E51D /* LoadingUIFramework.h */,
 				E273E1442450E62C0077E51D /* Info.plist */,
+				E273E1592450F7170077E51D /* IndeterminateLoadingView.swift */,
+				E273E15B2450F8010077E51D /* LoadingViewController.swift */,
 			);
 			path = LoadingUIFramework;
 			sourceTree = "<group>";
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					E273E13F2450E62C0077E51D = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -131,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E273E15A2450F7170077E51D /* IndeterminateLoadingView.swift in Sources */,
+				E273E15C2450F8010077E51D /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 		E273E1492450E62C0077E51D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8825K9HH49;
@@ -276,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.christopherdevito.LoadingUIFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +295,7 @@
 		E273E14A2450E62C0077E51D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8825K9HH49;
