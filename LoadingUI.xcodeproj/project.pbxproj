@@ -25,6 +25,13 @@
 			remoteGlobalIDString = E273E1402450E62C0077E51D;
 			remoteInfo = LoadingUIFramework;
 		};
+		E273E1572450F65E0077E51D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E273E14E2450F4F90077E51D /* LoadingUIFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E273E13F2450E62C0077E51D;
+			remoteInfo = LoadingUIFramework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +134,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E273E1582450F65E0077E51D /* PBXTargetDependency */,
 			);
 			name = LoadingUI;
 			productName = LoadingUI;
@@ -207,6 +215,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E273E1582450F65E0077E51D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LoadingUIFramework;
+			targetProxy = E273E1572450F65E0077E51D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E273E1282450E6110077E51D /* Main.storyboard */ = {
