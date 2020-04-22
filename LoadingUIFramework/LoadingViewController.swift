@@ -12,15 +12,23 @@ import UIKit
 public class LoadingViewController: UIViewController {
     
     /// A loading view GIF object.
-    let loadingGIF = IndeterminateLoadingView()
-
-    override func viewDidLoad() {
+    var loadingGIF: IndeterminateLoadingView!
+    public var loadingView: UIView!
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
+        presentLoadingGIF()
     }
     
     /// This method sets up the loading screen GIF.
     public func presentLoadingGIF() {
-        
+        loadingGIF = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) as? IndeterminateLoadingView
+        view.addSubview(loadingGIF)
+        loadingGIF.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadingGIF.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingGIF.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
     
     /// This method displays an optional message briefly before disappearing.
