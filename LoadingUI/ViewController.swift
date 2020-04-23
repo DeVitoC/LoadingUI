@@ -34,9 +34,10 @@ class ViewController: UIViewController {
         present(loadingScreen, animated: true) {
             // to be implemented
             
-            usleep(1000)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.loadingScreen.loadingGIFWillDisappear()
+            }
             
-            self.loadingScreen.loadingGIFWillDisappear()
         }
     }
     

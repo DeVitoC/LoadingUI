@@ -13,12 +13,21 @@ public class LoadingViewController: UIViewController {
     
     /// A loading view GIF object.
     var loadingGIF: IndeterminateLoadingView!
-    //var loadingGIF: UIImageView!
+    var successLabel: UILabel!
     
     public override func viewDidLoad() {
         presentLoadingGIF()
         super.viewDidLoad()
         
+    }
+    
+    func updateViews() {
+        guard successLabel != nil else { return }
+        successLabel.text = "Success"
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     /// This method sets up the loading screen GIF.
@@ -38,7 +47,27 @@ public class LoadingViewController: UIViewController {
     
     /// This method displays an optional message briefly before disappearing.
     public func loadingGIFWillDisappear() {
+        loadingGIF.isHidden = true
         
+        successLabel = UILabel()
+        successLabel.isHidden = false
+        
+        view.addSubview(successLabel)
+        successLabel.translatesAutoresizingMaskIntoConstraints = false
+        successLabel.text = "Success!"
+        NSLayoutConstraint.activate([
+            successLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            successLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            successLabel.heightAnchor.constraint(equalToConstant: 100),
+            successLabel.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        
+        //viewDidAppear(true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.dismiss(animated: true)
+        }
     }
 
 }
