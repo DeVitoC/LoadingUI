@@ -13,22 +13,27 @@ public class LoadingViewController: UIViewController {
     
     /// A loading view GIF object.
     var loadingGIF: IndeterminateLoadingView!
-    public var loadingView: UIView!
+    //var loadingGIF: UIImageView!
     
     public override func viewDidLoad() {
-        super.viewDidLoad()
         presentLoadingGIF()
+        super.viewDidLoad()
+        
     }
     
     /// This method sets up the loading screen GIF.
     public func presentLoadingGIF() {
-        loadingGIF = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) as? IndeterminateLoadingView
+        //loadingGIF = (UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) as! IndeterminateLoadingView)
+        loadingGIF = IndeterminateLoadingView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         view.addSubview(loadingGIF)
         loadingGIF.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loadingGIF.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            loadingGIF.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+            loadingGIF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingGIF.heightAnchor.constraint(equalToConstant: 100),
+            loadingGIF.widthAnchor.constraint(equalToConstant: 100)
+            ])
+        loadingGIF.startAnimating()
     }
     
     /// This method displays an optional message briefly before disappearing.
