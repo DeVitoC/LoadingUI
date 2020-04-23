@@ -34,7 +34,9 @@ class ViewController: UIViewController {
         present(loadingScreen, animated: true) {
             // to be implemented
             
+            usleep(1000)
             
+            self.loadingScreen.loadingGIFWillDisappear()
         }
     }
     
